@@ -22,4 +22,8 @@ make -C build/
 build/Image-Abstraction
 ```
 
-Only dependency here is *Qt5Widgets*.
+### Dependencies
+The following libraries are required:
+* Compiler supporting C++11
+* CMake 3.10
+* Qt5Widgets
