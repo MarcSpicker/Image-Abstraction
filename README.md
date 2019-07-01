@@ -1,15 +1,17 @@
 # Image-Abstraction
-The code depend only on Qt4.
+The code depends only on Qt4.
 
 To compile it 
+
+```bash
 
 cd ~/ImageAbstractionInterface
 qmake 
 make 
 ./image_abstraction 
+```
 
-
-# CMake
+# Building with CMake
 
 You can build the software with CMake by switching to the experimental branch `cmake` and running following commands:
 
