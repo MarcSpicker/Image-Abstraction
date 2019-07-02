@@ -31,7 +31,7 @@ void mwdebug(char *fmt, ...)
     }
 }
 
-void mwerror(int code, int exit_code, char *fmt, ...)
+void mwerror(int code, int exit_code, const char *fmt, ...)
 {
     va_list marker;
 

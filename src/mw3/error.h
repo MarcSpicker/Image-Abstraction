@@ -14,7 +14,7 @@ extern "C" {
 
 /* src/error.c */
 void mwdebug(char *fmt, ...);
-void mwerror(int code, int exit_code, char *fmt, ...);
+void mwerror(int code, int exit_code, const char *fmt, ...);
 
 #ifdef __cplusplus
 }

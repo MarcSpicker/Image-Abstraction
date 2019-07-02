@@ -14,6 +14,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 /* Include always the MegaWave2 include file */
 #include "mw3.h"

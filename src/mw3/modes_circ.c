@@ -20,6 +20,7 @@ out<-modes_circ "output Fsignal of meaningful modes"
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #include "mw3.h"
 
 #define MIN(a,b) ((a)<(b)?(a):(b))

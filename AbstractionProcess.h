@@ -27,6 +27,7 @@
 #include "stdlib.h"
 #include "tree_of_shapes.h"
 #include <cfloat>
+#include <string>
 #include "TreeOfShapes.h"
 
 enum Abstraction_Mode { COLOR_SKETCH=0, FILTER_COLOR=1, SHOW_TREE=2, SYNTEXTURE_COLOR=3, SYNTEXTURE_COLOR_WA=4,
@@ -45,7 +46,7 @@ public:
 
     QImage run (int process, char* dictionnary_name);
     QImage render(TOSParameters tosParameters, bool &tree_recomputed, DictionaryParameters dictionaryParameters = getDefaultDictionaryParameters(), TreeOfShapes * dictionnary=NULL);
-    std::vector<QImage> render_shape_by_shape(TOSParameters tosParameters, DictionaryParameters dictionaryParameters, TreeOfShapes * dictionnary);
+    // std::vector<QImage> render_shape_by_shape(TOSParameters tosParameters, DictionaryParameters dictionaryParameters, TreeOfShapes * dictionnary);
     void addDictionnary( TreeOfShapes * dictionary );
 
     void save_shapes( QString folder_name, bool average_color ){ _treeOfShapes->save_shapes(folder_name, average_color); }

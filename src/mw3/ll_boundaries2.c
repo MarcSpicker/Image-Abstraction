@@ -25,6 +25,7 @@ out<-ll_boundaries2       "output boundaries (Flists)"
 #include <stdio.h>
 #include <float.h>
 #include <math.h>
+#include <stdlib.h>
 #include "mw3.h"
 
 extern void flst();

@@ -3647,7 +3647,7 @@ void TreeOfShapes::compute_tree( TOSParameters tosParameters, bool dictionary ){
 
         if( tosParameters.color_sketch == 1 ){
 
-            char local=NULL ; //"local boundaries, default NULL",
+            char local; //"local boundaries, default NULL",
 
             Cfimage out = mw_change_cfimage(NULL,_imgin->nrow,_imgin->ncol);
             filter_shapes(out,
@@ -3739,9 +3739,9 @@ void TreeOfShapes::save_shapes( QString folder_name, bool average_color ){
     std::cout << "Saved" << std::endl;
 }
 
-std::vector<QImage> TreeOfShapes::render_shape_by_shape(TOSParameters tosParameters, TreeOfShapes *tosDictionary, DictionaryParameters dictionaryParameters ){
+// std::vector<QImage> TreeOfShapes::render_shape_by_shape(TOSParameters tosParameters, TreeOfShapes *tosDictionary, DictionaryParameters dictionaryParameters ){
 
-}
+// }
 
 Ccimage TreeOfShapes::render(TOSParameters tosParameters, bool &tree_recomputed, TreeOfShapes *tosDictionary, DictionaryParameters dictionaryParameters, bool save_shapes, QString folder_name ){
 

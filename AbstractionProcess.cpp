@@ -127,14 +127,14 @@ void AbstractionProcess::init(Cfimage inputImg, Shapes &pTree){
 
     if  ( ((imgIntensity = mw_new_fimage()) == NULL) ||
           (mw_alloc_fimage(imgIntensity,inputImg->nrow,inputImg->ncol) == NULL) )
-        mwerror(FATAL,1,"Not enough memory.\n");
+        mwerror(FATAL,1, std::string("Not enough memory.\n").c_str());
 
     if((pTree = mw_new_shapes()) == NULL)
         mwerror(FATAL, 1,
-                "fgrain --> Not enough memory to allocate the tree of shapes");
+                std::string("fgrain --> Not enough memory to allocate the tree of shapes").c_str());
     if  ( ((_NormOfDu = mw_new_fimage()) == NULL) ||
           (mw_alloc_fimage(_NormOfDu,inputImg->nrow,inputImg->ncol) == NULL) )
-        mwerror(FATAL,1,"Not enough memory.\n");
+        mwerror(FATAL,1,std::string("Not enough memory.\n").c_str());
     /*=======================================*/
     /*==    Compute Intensity imag        ===*/
     /*=======================================*/
@@ -216,10 +216,10 @@ void AbstractionProcess::mw_fgrain_side(int *pMinArea, Fimage pFloatImageInput, 
     if(mw_change_fimage(pFloatImageOutput, pFloatImageInput->nrow,
                         pFloatImageInput->ncol) == NULL)
         mwerror(FATAL, 1,
-                "fgrain --> Not enough memory to allocate the output image");
+                std::string("fgrain --> Not enough memory to allocate the output image").c_str());
     if((pTree = mw_new_shapes()) == NULL)
         mwerror(FATAL, 1,
-                "fgrain --> Not enough memory to allocate the tree of shapes");
+                std::string("fgrain --> Not enough memory to allocate the tree of shapes").c_str());
 
     /* Compute the Level Sets Transform of the input image */
     flst(NULL, pFloatImageInput, pTree);
@@ -1331,7 +1331,7 @@ Fsignal AbstractionProcess::sgauss(float *std,
     v = 0.5*v*v/log(10.);
 
     out = mw_change_fsignal(out, n);
-    if (!out) mwerror(FATAL,1,"Not enough memory.");
+    if (!out) mwerror(FATAL,1,std::string("Not enough memory.").c_str());
 
     out->shift = -0.5*(float)(n-1);
 
@@ -1369,10 +1369,10 @@ Fsignal AbstractionProcess::Sgauss(float *std, Fsignal out, int *size)
 
     if  ( ((sgaussX = mw_new_fsignal()) == NULL) ||
           (mw_alloc_fsignal(sgaussX, n) == NULL) )
-        mwerror(FATAL,1,"Not enough memory.\n");
+        mwerror(FATAL,1, std::string("Not enough memory.\n").c_str());
     if  ( ((sgaussY = mw_new_fsignal()) == NULL) ||
           (mw_alloc_fsignal(sgaussY, n) == NULL) )
-        mwerror(FATAL,1,"Not enough memory.\n");
+        mwerror(FATAL,1, std::string("Not enough memory.\n").c_str());
 
     sgaussX = sgauss(std, sgaussX, size);
     sgaussY = sgauss(std, sgaussY, size);
@@ -1432,7 +1432,7 @@ void AbstractionProcess::filter_shapes( Fimage sketch,
     Fv = mw_change_fimage(NULL,_imgin->nrow,_imgin->ncol);
     sketch = mw_change_fimage(NULL,_imgin->nrow,_imgin->ncol);
 
-    if(!(Fv && sketch)) mwerror(FATAL,1,"Not enough memory.\n");
+    if(!(Fv && sketch)) mwerror(FATAL,1, std::string("Not enough memory.\n").c_str());
 
 
     /*   eps = 0.; lgeo = 10.; step = 0.00392; prec = 2; hstep = 0.0000392; */
@@ -1471,7 +1471,7 @@ void AbstractionProcess::filter_shapes( Fimage sketch,
     blue = (float*)calloc(tree->nb_shapes,sizeof(float));
     gray = (float*)calloc(tree->nb_shapes,sizeof(float));
     if(!(gray && red  && green && blue))
-        mwerror(FATAL,1,"Not enough memory.\n");
+        mwerror(FATAL,1, std::string("Not enough memory.\n").c_str());
 
 
     /* integrate grey level saturation and hue */
@@ -1488,7 +1488,7 @@ void AbstractionProcess::filter_shapes( Fimage sketch,
 
     /* recursively compute area of meaningful shapes when holes are removed */
     truearea = (int*)malloc(sizeof(int)*tree->nb_shapes);
-    if(!truearea)     mwerror(FATAL,1,"Not enough memory.\n");
+    if(!truearea)     mwerror(FATAL,1,std::string("Not enough memory.\n").c_str());
     get_shapes_truearea(tree->the_shapes,tree->the_shapes,truearea);
 
     for(i=0;i<tree->nb_shapes;i++){
@@ -1762,24 +1762,25 @@ void AbstractionProcess::save_shapes( QString folder_name, TOSParameters tosPara
 
 }
 
-std::vector<QImage> AbstractionProcess::render_shape_by_shape(TOSParameters tosParameters, DictionaryParameters dictionaryParameters, TreeOfShapes * dictionnary){
+// std::vector<QImage> AbstractionProcess::render_shape_by_shape(TOSParameters tosParameters, DictionaryParameters dictionaryParameters, TreeOfShapes * dictionnary){
 
 
-    std::vector<QImage> result_images;
-    if( tosParameters.model == 4 )
-        result_images = _treeOfShapes->render_shape_by_shape( tosParameters, dictionnary, dictionaryParameters );
-    else
-        result_images = _treeOfShapes->render_shape_by_shape( tosParameters );
+//     std::vector<QImage> result_images;
+//     if( tosParameters.model == 4 )
+//         result_images = _treeOfShapes->render_shape_by_shape( tosParameters, dictionnary, dictionaryParameters );
+//     else
+//         result_images = _treeOfShapes->render_shape_by_shape( tosParameters );
 
-    return result_images;
-}
+//     return result_images;
+// }
 
 
 
 QImage AbstractionProcess::run (int process, char* dictionnary_name)
 {
-#if 0
     QImage result_image;
+#if 0
+    
 
     /**************************************************/
     /*****  TIME AND CARRY OUT GRAIN RENDERING   ******/
@@ -2162,7 +2163,7 @@ QImage AbstractionProcess::run (int process, char* dictionnary_name)
     std::cout << "time elapsed : " << elapsedTime <<" seconds"<< std::endl;
     std::cout << "***************************" << std::endl << std::endl << std::endl;
 
-    return result_image;
 #endif
+    return result_image;
 }
 

@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-void OptionWidget::setInLayout( QGridLayout*layout, char* text, QWidget *first, QWidget *second, int row ){
+void OptionWidget::setInLayout( QGridLayout*layout, const char* text, QWidget *first, QWidget *second, int row ){
 
     layout->addWidget(new QLabel(text), row,0);
     layout->addWidget(first, row,1);

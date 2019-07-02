@@ -1459,7 +1459,7 @@ short _mw_wtrans2d_create_wtrans(char *fname, Wtrans2d wtrans, char *type);
 
 /* src/error.c */
 void mwdebug(char *fmt, ...);
-void mwerror(int code, int exit_code, char *fmt, ...);
+void mwerror(int code, int exit_code, const char *fmt, ...);
 
 /* src/rawdata.c */
 Rawdata mw_new_rawdata(void);

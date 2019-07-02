@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.6) #specify the required version of cmake
+cmake_minimum_required (VERSION 3.10) #specify the required version of cmake
 project (IIO)                        #give a name to the project/solution
 
 # ADD LOCAL PATH TO SEARCH MODULES

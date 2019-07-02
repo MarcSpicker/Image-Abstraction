@@ -126,7 +126,7 @@ protected:
     QComboBox * _modeComboBox;
 
     int _effect_intensity_nb;
-    void setInLayout( QGridLayout*layout, char* text, QWidget *first, QWidget *second, int row );
+    void setInLayout( QGridLayout*layout, const char* text, QWidget *first, QWidget *second, int row );
 private slots:
     void setTransparencySlider();
     void setTransparencySpinBox();

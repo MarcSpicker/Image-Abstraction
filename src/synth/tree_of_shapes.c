@@ -1,5 +1,7 @@
 #include "tree_of_shapes.h"
 #include <limits.h>
+#include <stdlib.h>
+#include "mw3-modules-specific.h"
 
 /*====== Shape Initialization  ===*/
 void shapeInitialize(Shapes pTree)
