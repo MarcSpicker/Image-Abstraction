@@ -3768,7 +3768,8 @@ Ccimage TreeOfShapes::render(TOSParameters tosParameters, bool &tree_recomputed,
     Fsignal t2b_index = NULL, gaussKernel;
     ALPHA = 0.0;
 
-    Ccimage imgsyn = mw_change_ccimage(imgsyn, _imgin->nrow, _imgin->ncol);
+    Ccimage imgsyn = nullptr;
+    imgsyn = mw_change_ccimage(imgsyn, _imgin->nrow, _imgin->ncol);
     if  ( ((imgShapeLabel = mw_new_cimage()) == NULL) ||
           (mw_alloc_cimage(imgShapeLabel, _imgin->nrow, _imgin->ncol) == NULL) )
         mwerror(FATAL,1,"Not enough memory.\n");
