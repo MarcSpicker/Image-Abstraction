@@ -31,32 +31,28 @@ set(SOURCES
     ${PROJECT_DIR}/TreeOfShapes.cpp
 )
 
+# Qt5
 find_package(Qt5 5.10 COMPONENTS Widgets REQUIRED)
 
 # mw3
 add_subdirectory(src/mw3)
-
 # flst
 add_subdirectory(src/flst)
-
 # iio
 add_subdirectory(src/iio)
-
 # kdtree
 add_subdirectory(src/kdtree)
-
 # segment
 add_subdirectory(src/segment)
-
 # synth
 add_subdirectory(src/synth)
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${Qt5Widgets_INCLUDE_DIRS}
 )
 
-add_executable(
-    ${PROJECT_NAME}
+add_executable(${PROJECT_NAME}
     ${HEADERS}
     ${SOURCES}
 )
